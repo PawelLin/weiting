@@ -1,6 +1,6 @@
-# my-simple-webpack
+# weiting
 
-> A Vue.js project
+> A personal system
 
 ## Build Setup
 
@@ -9,7 +9,7 @@
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+node build/webpack-dev-server.js
 
 # build for production with minification
 npm run build
