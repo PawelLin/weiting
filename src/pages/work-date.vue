@@ -31,20 +31,21 @@ export default {
   	data () {
     	return {
             dayType:{
-                ot: [],
                 realx: [],
                 sot: [],
                 holiday: [],
                 normal: [],
-                leave: []
+                leave: [],
+                ot: []
             },
-            dayColor:['realx', 'sot', 'normal', 'holiday', 'leave'],
+            dayColor:['realx', 'sot', 'normal', 'holiday', 'leave', 'ot'],
             dayValue:{
                 realx: '休息',
                 sot: '出差',
                 normal: '正常',
                 holiday: '假期',
-                leave: '请假'
+                leave: '请假',
+                ot: '加班'
             },
             setBorder: '',
             setBorderType: ''
@@ -80,8 +81,9 @@ export default {
                 }
                 else{
                     for(let i in this.dayType){
-                        if(this.dayType[i].indexOf(day) > -1){
-                            return false;
+                        let isHave = this.dayType[i].indexOf(day);
+                        if(isHave > -1){
+                            this.dayType[i].splice(isHave, 1);
                         }
                     }
                     this.dayType[this.setBorderType].push(day);

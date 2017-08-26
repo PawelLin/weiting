@@ -112,6 +112,9 @@ export default {
 .day-leave{
     background-color:#ffeb3b;
 }
+.day-ot{
+    background-color: #F9C;
+}
 .day-today{
     width: 25px;
     height: 25px;
@@ -205,6 +208,19 @@ export default {
     }
     td:hover{
         background-color:#ffeb3b;
+    }
+}
+.wdate-style-ot{
+    th{
+        border:1px solid #f9c;
+        transition: border 1s;
+    }
+    td{
+        border:1px solid #f9c;
+        transition: border 1s;
+    }
+    td:hover{
+        background-color:#f9c;
     }
 }
 </style>
