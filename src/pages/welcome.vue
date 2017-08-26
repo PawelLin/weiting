@@ -42,7 +42,7 @@ export default {
     	}
   	},
   	methods:{
-        getList(params){
+        getList(){
             common.getMenu({
                 method:'post',
                 data:{
@@ -61,6 +61,8 @@ export default {
                     url: this.url
                 }
             }).then(data => {
+                this.name = '';
+                this.url = '';
                 alert('新增成功');
                 this.getList();
                 this.$parent.getMenu();
