@@ -10,8 +10,8 @@ var server = new WebpackDevServer(compiler, {
     contentBase:'./dist/',
     publicPath: '/assets/',
     proxy: {
-      "**": "http://127.0.0.1:8081"
-    },
+      "**": "http://localhost:8081"
+    }
 });
 server.listen(8080, "localhost", function() {
   opn("http://localhost:8080");
