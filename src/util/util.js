@@ -81,7 +81,7 @@ export default{
 			}
 		}
 		util.getDiffDay = (day) => {
-			let ONEDAY = 24*60*60*1000;
+			const ONEDAY = 24*60*60*1000;
             let start = new Date(day).getTime();
             let now = new Date().getTime();
             return Math.ceil((now - start) / ONEDAY);

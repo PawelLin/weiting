@@ -77,7 +77,6 @@ export default {
   		},
   		getFlex(){
   			common.getFlex({
-
   			}).then(data => {
   				this.flexList = data.data;
   			});

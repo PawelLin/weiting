@@ -5,7 +5,7 @@
             <div class="work-date-set" slot="wgrid">
                 <div v-for="item in dayColor" class="work-date-color">
                     <span @click.stop="setDayColor(item)" :class="'day-' + item">&nbsp;</span>
-                    <label>{{dayValue[item]}}</label>
+                    <label>{{dayValue[item]}} {{dayType[item].length}}天</label>
                 </div>
                 <div class="work-date-color">
                     <Wbutton @search="submitSet" value="提交"></Wbutton>
@@ -93,21 +93,21 @@ export default {
         },
         submitSet(){
             common.addWork({
-                    method: 'post',
-                    data:{
-                        ot: this.dayType.ot,
-                        realx: this.dayType.realx,
-                        sot: this.dayType.sot,
-                        holiday: this.dayType.holiday,
-                        normal: this.dayType.normal,
-                        leave: this.dayType.leave
-                    }
-                }).then(data => {
-                    alert('设置成功');
-                    this.setBorder = '';
-                    this.setBorderType = '';
-                    this.getWorkList();
-                });
+                method: 'post',
+                data:{
+                    ot: this.dayType.ot,
+                    realx: this.dayType.realx,
+                    sot: this.dayType.sot,
+                    holiday: this.dayType.holiday,
+                    normal: this.dayType.normal,
+                    leave: this.dayType.leave
+                }
+            }).then(data => {
+                alert('设置成功');
+                this.setBorder = '';
+                this.setBorderType = '';
+                this.getWorkList();
+            });
         }
     },
     mounted(){
