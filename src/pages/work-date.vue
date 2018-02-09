@@ -3,12 +3,12 @@
     	<Wgrid>
             <Wdate @setDay="addWork" :setColor="setColor" slot="wgrid"></Wdate>
             <div class="work-date-set" slot="wgrid">
+                <div class="work-date-color">
+                    <Wbutton @search="submitSet" value="提交"></Wbutton>
+                </div>
                 <div v-for="item in dayColor" class="work-date-color">
                     <span @click.stop="setDayColor(item)" :class="'day-' + item">&nbsp;</span>
                     <label>{{dayValue[item]}} {{dayType[item].length}}天</label>
-                </div>
-                <div class="work-date-color">
-                    <Wbutton @search="submitSet" value="提交"></Wbutton>
                 </div>
             </div>
         </Wgrid>
@@ -123,7 +123,9 @@ export default {
 }
 .work-date-color{
     line-height:20px;
-    margin-top:43px;
+}
+.work-date-color + .work-date-color {
+    margin-top: 40px;
 }
 .work-date-color > span{
     display:inline-block;
